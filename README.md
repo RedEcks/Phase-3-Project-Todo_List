@@ -1,8 +1,8 @@
-# Getting Started with Create React App
+# Phase-3-Project-Todo List
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+For my third project, I created a todo list. Users can add tasks to the list add save them on a database 
 
-## Available Scripts
+## Features
 
 In the project directory, you can run:
 
