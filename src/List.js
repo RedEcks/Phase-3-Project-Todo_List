@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import Form from './Form';
+import ToDo from './ToDo';
 
 
 function List(){
@@ -15,7 +15,7 @@ function List(){
     return(
     <div>
         <h1>What's up doc?</h1>
-        <Form onSubmit={AddTodo}/>
+        <ToDo onSubmit={AddTodo}/>
     </div>)
 }
 
