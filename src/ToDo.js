@@ -1,43 +1,27 @@
 import React, {useState} from "react";
 import Cards from "./Card";
+import Dropdown from "./Dropdown";
 
 
 function ToDo(){
 
-    //const [input,setInput]=useState("")
-    const [category,setCategory]=useState("")
-    const [taskMaster, setTaskmaster]=useState("")
     const [task,setTask]=useState("")
-    const [tasks, setTasks]=useState([])
+    const [category, setCategory]=useState("")
 
-    // function handleChange(event){
-    //     setInput(event.target.value);
-    // }
+
 
     function handleTask(event){
         setTask(event.target.value)
     }
 
-    function handleCategory(event){
-        setCategory(event.target.value)
-    }
-
-    function handleTaskMaster(event){
-        setTaskmaster(event.target.value)
-    }
-
-
 
     function handleSubmit(event){
         event.preventDefault();
-        const newTodo=  {
+        let newTodo=  {
             "Task": task,
-            "Category": category,
-            "Task Master": taskMaster,
+            "Category": category
         }
-        //setTasks([...tasks,newTodo]);
-        //setInput("")
-        console.log(tasks)
+
 
         fetch("http://localhost:9292/task",{
             method:"POST",
@@ -50,19 +34,17 @@ function ToDo(){
             .then((newList)=>{ console.log(newList); setTask(newList)})
         }
         
-    }
+    
 
     let newTask=tasks.map((task)=><Cards task={task}/>)
-
 
     return(
 
         <div>
         <form onSubmit={handleSubmit}>
             <input type="text" name="task" placeholder="Add Task" onChange={handleTask} />
-            <input type="text" name="category" placeholder="Add Category" onChange={handleCategory}/>
-            <input type="text" name="name" placeholder="Add Task Master" onChange={handleTaskMaster}/>
             <button type="submit" >Add Task</button>
+            <Dropdown placeholder="Select"/>
         </form>
             <div>
                 {newTask}
@@ -70,5 +52,6 @@ function ToDo(){
         </div>
     )
 
-    }
+}
+
 export default ToDo

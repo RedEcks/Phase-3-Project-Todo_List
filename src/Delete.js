@@ -1,21 +1,7 @@
-import React from "react"
-
-
-
-function handleDelete(){
-    console.log("Hi")
-    fetch(`http://localhost:4000/music/${song.id}`,{
+function handleDelete(category){
+    fetch(`http://localhost:9292/category/${category.id}`,{
         method: "DELETE",
-    })
-        .then((r)=>r.json())
-
-        return(
-            <div>
-                <button>
-                    Delete Task
-                </button>
-            </div>
-        )
+    }).then((r)=>r.json())
 }
 
 export default handleDelete;

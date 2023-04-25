@@ -1,5 +1,5 @@
 import React from "react";
-import ToDo from './ToDo';
+// import ToDo from './ToDo';
 
 
 function List(){
@@ -7,7 +7,7 @@ function List(){
     return(
     <div>
         <h1>What's up doc?</h1>
-        <ToDo/>
+        {/* <ToDo/> */}
     </div>)
 }
 
